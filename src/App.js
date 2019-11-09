@@ -1,0 +1,41 @@
+import React from 'react';
+import logo from './logo.svg';
+import './App.css';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+} from "react-router-dom";
+
+//components
+import Home from './components/Home';
+import About from './components/About';
+import Gallery from './components/Gallery';
+import Media from './components/Media';
+
+
+function App() {
+    return (
+        <Router>
+            <div className="App">
+                <Switch>
+                    <Route exact path="/">
+                        <Home />
+                    </Route>
+                    <Route exact path="/bio">
+                        <About />
+                    </Route>
+                    <Route exact path="/gallery">
+                        <Gallery />
+                    </Route>
+                    <Route exact path="/media">
+                        <Media />
+                    </Route>
+
+                </Switch>
+            </div >
+        </Router>
+    );
+}
+
+export default App;
