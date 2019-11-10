@@ -14,7 +14,7 @@ class Home extends React.Component {
                 <div className="name-div">
 
                     <h1 className="name-h1">Lily Marcheschi</h1>
-                    <h1 className="name-h1" style={{ fontSize: "23px", color: 'rgba(255,255,255,0.95)' }}>Actor </h1>
+                    <h1 className="name-h1" style={{ fontSize: "23px", color: 'rgba(255,255,255,0.95)' }}>Actor | Singer | Dancer | Model </h1>
 
                 </div>
             </div>
