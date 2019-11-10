@@ -1,15 +1,18 @@
 import React from 'react';
 import Nav from './Nav';
 
-class Gallery extends React.Component {
+class Contact extends React.Component {
     render() {
         return (
             <div>
                 <Nav />
-                Gallery
-            </div>
+                Contact
+  
+            </div >
+
+
         )
     }
 }
 
-export default Gallery;
+export default Contact;

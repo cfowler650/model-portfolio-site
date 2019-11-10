@@ -12,6 +12,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import Media from './components/Media';
+import Contact from './components/Contact';
 
 
 function App() {
@@ -30,6 +31,9 @@ function App() {
                     </Route>
                     <Route exact path="/media">
                         <Media />
+                    </Route>
+                    <Route exact path="/contact">
+                        <Contact />
                     </Route>
 
                 </Switch>
