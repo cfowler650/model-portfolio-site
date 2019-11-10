@@ -1,50 +1,21 @@
 import React from 'react';
 import Nav from './Nav';
 
+import { CarouselProvider, Slider, Slide, ButtonBack, ButtonNext, Image } from 'pure-react-carousel';
+import 'pure-react-carousel/dist/react-carousel.es.css';
 
 
 
-var slideIndex = 1;
 
 class Gallery extends React.Component {
 
-    constructor(props) {
-        super(props)
-        this.state = {
-            myState: 1
-        }
 
-        this.showDivs = this.showDivs.bind(this)
-
-    }
-
-
-    plusDivs(n) {
-        this.showDivs(slideIndex += n);
-    }
-
-    showDivs(n) {
-
-        var i;
-        var x = document.getElementsByClassName("bio-image");
-        console.log(x)
-        if (n > x.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = x.length }
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-
-        if (x) {
-            console.log(x)
-            // x[slideIndex - 1].style.display = "block";
-        }
-    }
 
 
 
 
     render() {
-        this.showDivs(slideIndex);
+
 
         return (
             <div className="outer-wrapper">
@@ -58,16 +29,22 @@ class Gallery extends React.Component {
                     </div>
                     <section className="content">
                         <div className="main-content" style={{ justifyContent: "center" }}>
-                            <button class="w3-button w3-display-left" >&#10094; </button>
-                            <div className="bio-image-container">
-                                <div className="bio-image-wrapper">
-                                    <img className="bio-image" src="./model.jpg" />
-                                    <img className="bio-image" src="./lily1.jpg" />
+                            <CarouselProvider
+                                naturalSlideWidth={100}
+                                naturalSlideHeight={100}
+                                totalSlides={3}
+                                style={{ width: '500px' }}
 
-                                </div>
-                            </div>
+                            >
+                                <ButtonBack>Back</ButtonBack>
+                                <Slider>
+                                    <Slide index={0}><Image src={'./lily1.jpg'} /></Slide>
+                                    <Slide index={1}><Image src={'./lily2.jpg'} /></Slide>
+                                    <Slide index={2}><Image src={'./model.jpg'} /></Slide>
+                                </Slider>
 
-                            <button class="w3-button w3-display-right" >&#10095;</button>
+                                <ButtonNext>Next</ButtonNext>
+                            </CarouselProvider>
 
                         </div>
                     </section>
